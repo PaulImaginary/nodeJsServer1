@@ -30,8 +30,39 @@ router.post("/",(req,res)=>{
 // if put in front, all the path behind will all go into 
 // this condition as it match this path
 // whatever that's after / is the id
-router.get("/:id",(req,res)=>{
+
+// router.get("/:id",(req,res)=>{
+//     // params = id , whatever after : is the param name
+//     res.send(`Get USer with ID ${req.params.id}`)
+// })
+
+// // update the user
+// router.put("/:id",(req,res)=>{
+//     // params = id , whatever after : is the param name
+//     res.send(`update USer with ID ${req.params.id}`)
+// })
+
+// // delete the user
+// router.delete("/:id",(req,res)=>{
+//     // params = id , whatever after : is the param name
+//     res.send(`delete USer with ID ${req.params.id}`)
+// })
+
+
+// converting above code to neater code
+// since they share the same path we can use .route function
+
+router.route("/:id").get((req,res)=>{
     // params = id , whatever after : is the param name
     res.send(`Get USer with ID ${req.params.id}`)
+}).put((req,res)=>{
+    // params = id , whatever after : is the param name
+    res.send(`update USer with ID ${req.params.id}`)
+}).delete((req,res)=>{
+    // params = id , whatever after : is the param name
+    res.send(`delete USer with ID ${req.params.id}`)
 })
+
+
+
 module.exports = router
