@@ -54,6 +54,7 @@ router.post("/",(req,res)=>{
 
 router.route("/:id").get((req,res)=>{
     // params = id , whatever after : is the param name
+    console.log(req.user)
     res.send(`Get USer with ID ${req.params.id}`)
 }).put((req,res)=>{
     // params = id , whatever after : is the param name
@@ -63,6 +64,20 @@ router.route("/:id").get((req,res)=>{
     res.send(`delete USer with ID ${req.params.id}`)
 })
 
+// .param() function is use to find a match parameter 
+// it's a middleware function, will run this before the responds
+// run it when user request, when finish run the responds
 
+const users = [{name:"paul"},{name:"ting"}]
+router.param("id",(req,res,next,id)=>{
+    console.log(id) // run this before the responds
+    // set a random variable to use "user" here
+    // this req.user can be access at anywhere that
+    // has the req object
+    req.user = users[id]
+    next()
+})
+
+// NOTE :  next key word normally use for middleware
 
 module.exports = router
