@@ -1,0 +1,7 @@
+npm init -y
+npm i express
+npm i --save-dev nodemon  
+// help to restart server whenever we make changes
+change the package.json change the script  
+"devStart": "nodemon server.js"
+

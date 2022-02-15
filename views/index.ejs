@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- going to run some code on the server -->
+    <!-- equal sign means output and run the code on the 
+        server and then show answer to the page -->
+    <p>hi hi </p> <%= 2+2 %>
+    <!-- u can use the variable created in server -->
+    
+    <!-- better way to prevent crush if text not define 
+    ,locals is always define means the object from the server-->
+    <%= locals.text || 'Default' %> 
+</body>
+</html>
