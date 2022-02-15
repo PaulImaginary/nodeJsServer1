@@ -20,6 +20,7 @@ router.get('/new',(req,res)=>{
 
 // creating user      
 router.post("/",(req,res)=>{
+    console.log("hi")
     res.send("create user")
 })
 
